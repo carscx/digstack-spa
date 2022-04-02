@@ -1,0 +1,27 @@
+@mixin inputWrapper {
+  color: var(--main-text-color);
+}
+
+@mixin description {
+  font-size: 13px;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+@mixin inputWrapperError {
+  background: var(--error-color-bg);
+  border-radius: 8px;
+  align-items: center;
+  color: var(--error-color);
+  display: flex;
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 5px;
+  padding: 10px;
+  width: 100%;
+
+  & > svg {
+    margin-right: 10px;
+  }
+}

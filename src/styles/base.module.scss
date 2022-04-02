@@ -1,0 +1,17 @@
+@import 'reset';
+@import 'animations';
+@import 'fonts';
+@import 'variables';
+@import 'breakpoints';
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  background: #fefefe;
+  color: var(--primary-color);
+  font-family: var(--main-font);
+  height: 100%;
+}

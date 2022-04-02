@@ -1,0 +1,33 @@
+@import './inputWrapperVariables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include inputWrapper;
+}
+
+.description {
+  @include description;
+}
+
+.error {
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  @include inputWrapperError;
+}
+
+.align-start {
+  align-self: flex-start;
+}
+
+.align-center {
+  align-self: center;
+}
+
+.align-end {
+  align-self: flex-end;
+}

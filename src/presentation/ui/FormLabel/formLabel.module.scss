@@ -1,0 +1,33 @@
+.label {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 16px;
+  transition: opacity 200ms ease, transform 200ms ease, font-size 200ms ease, color 200ms ease;
+  color: var(--label-color);
+  padding-left: 10px;
+  transform: translateY(0);
+  width: 100%;
+  left: 0;
+  top: 50px;
+
+  &.disabled {
+    opacity: 0.3;
+    transition: opacity 200ms ease, transform 200ms ease, font-size 200ms ease, color 200ms ease;
+  }
+
+  input:focus + & {
+    color: var(--primary-color) !important;
+    transition: opacity 200ms ease, transform 200ms ease, font-size 200ms ease, color 200ms ease;
+  }
+}
+
+.isPlaceholder {
+  cursor: text;
+  font-size: 16px;
+  transform: translateY(25px);
+  transition: opacity 200ms ease, transform 200ms ease, font-size 200ms ease, color 200ms ease;
+}
+
+.error {
+  color: var(--error-color);
+}

@@ -1,0 +1,34 @@
+:root {
+  /* Colors */
+  --body-bg: #fcfdfe;
+  --primary-color: #003049;
+  --secondary-color: #f77f00;
+  --main-text-color: #003049;
+  --invert-text-color: #eae2b7;
+  --error-color: #d62828;
+  --error-color-bg: #ffe8e8;
+  --success-color: #00aa8c;
+  --success-color-bg: #f1fffd;
+
+  /* Fonts */
+  --font-family-titillium: 'Titillium Web', sans-serif;
+  --main-font: var(--font-family-titillium);
+
+  /* Button */
+  --button-default-background: var(--secondary-color);
+  --button-default-background-hover: var(--invert-text-color);
+  --button-default-color: white;
+  --button-default-color-hover: white;
+  --button-secondary-background: transparent;
+  --button-secondary-color: var(--secondary-color);
+  --button-secondary-color-hover: #ffffff;
+  --button-secondary-background-hover: var(--primary-color);
+  --button-cancel-background: #ffffff;
+  --button-cancel-border: #cccccc;
+  --button-cancel-color: #333333;
+  --button-outline-color: #ffffff;
+  --button-disabled-background: #f5f8fc;
+  --button-disabled-color: #c6d6f7;
+
+  --label-color: var(--primary-color);
+}

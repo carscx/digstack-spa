@@ -1,0 +1,68 @@
+@import 'styles/animations';
+@import 'styles/breakpoints';
+
+.brand {
+  align-items: center;
+  background: rgb(247, 158, 125);
+  background: linear-gradient(0deg, rgba(247, 158, 125, 1) 0%, rgba(240, 131, 14, 1) 100%);
+  display: flex;
+  flex-direction: column;
+  grid-area: centerLeft;
+  height: 100%;
+  justify-content: center;
+}
+
+.brandTitle {
+  animation: fadeIn ease 3s;
+  padding: 0.75rem;
+}
+
+.brandImg {
+  animation: fadeIn ease 3s;
+  padding: 0.75rem;
+  max-width: 400px;
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.brandImgLogin {
+  max-width: 100%;
+}
+
+.loginBox {
+  animation: fadeIn ease 3s;
+  align-items: center;
+  background: rgb(245, 211, 160);
+  background: radial-gradient(
+    circle,
+    rgba(245, 211, 160, 0.19091386554621848) 0%,
+    rgba(154, 154, 154, 0.24) 100%
+  );
+  display: flex;
+  grid-area: centerRight;
+  justify-content: center;
+  height: 100%;
+}
+
+.loginForm {
+  align-items: center;
+  border-radius: 1rem;
+  background-color: rgba(154, 154, 154, 0.14);
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 3rem;
+  padding: 1rem 1.5rem;
+  min-height: 350px;
+  width: 400px;
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    margin: 0 3rem;
+  }
+}
+
+.passwordInput {
+  margin-top: 10px;
+}

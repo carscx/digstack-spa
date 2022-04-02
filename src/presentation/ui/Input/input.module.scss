@@ -1,0 +1,41 @@
+@import './inputVariables';
+
+.label {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  outline: none;
+  transition: all 200ms ease;
+  margin-top: 10px;
+  transform: translateY(-10px);
+  width: 100%;
+
+  &:disabled {
+    opacity: 0.3;
+    transition: all 200ms ease;
+  }
+
+  &::placeholder {
+    transition: all 200ms ease;
+  }
+
+  &:focus {
+    transition: all 200ms ease;
+  }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  @include input;
+
+  &.error {
+    @include inputError;
+  }
+}
