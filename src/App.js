@@ -1,3 +1,5 @@
+/* eslint-disable dot-notation */
+import axios from 'axios'
 import { observer } from 'mobx-react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
@@ -18,6 +20,14 @@ const authStore = new AuthStore()
 
 function App() {
   const location = useLocation()
+
+  axios.interceptors.response.use((res) => {
+    res.headers['accept'] = 'application/json'
+    res.headers['content-type'] = 'application/json'
+    res.config.headers['Accept'] = 'application/json'
+    res.config.headers['Content-Type'] = 'application/json'
+    return res
+  })
 
   return (
     <StoreContext.Provider value={rootStore}>
