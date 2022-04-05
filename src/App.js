@@ -24,8 +24,9 @@ function App() {
   axios.interceptors.response.use((res) => {
     res.headers['accept'] = 'application/json'
     res.headers['content-type'] = 'application/json'
-    res.config.headers['Accept'] = 'application/json'
-    res.config.headers['Content-Type'] = 'application/json'
+    res.headers['Host'] = '*'
+    // res.config.headers['Accept'] = 'application/json'
+    // res.config.headers['Content-Type'] = 'application/json'
     return res
   })
 
