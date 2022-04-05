@@ -23,7 +23,7 @@ function Login() {
 
   const handleChangePassword = (e) => loginStore.changePassword(e.target.value)
   const handleFocusPassword = () => null
-  const handleBlurPassword = () => null
+  const handleBlurPassword = () => console.log('aksjd')
   const handleSubmit = () => loginStore.login().then((success) => success && navigate('/'))
 
   return (
