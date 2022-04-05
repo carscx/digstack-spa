@@ -24,30 +24,35 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <Routes location={location}>
           <Route element={<Wrapper />}>
-            <Route
+            {/* <Route
               path={HOME}
               element={
                 <ProtectedRoute user={authStore.isAuthenticated}>
                   <Home />
                 </ProtectedRoute>
               }
-            />
-            <Route
+            /> */}
+            <Route element={<ProtectedRoute user={authStore.isAuthenticated} />}>
+              <Route path={HOME} element={<Home />} />
+              <Route path={ABOUT_US} element={<About />} />
+              <Route path={REGISTER} element={<Register />} />
+            </Route>
+            {/* <Route
               path={ABOUT_US}
               element={
                 <ProtectedRoute user={authStore.isAuthenticated}>
                   <About />
                 </ProtectedRoute>
               }
-            />
-            <Route
+            /> */}
+            {/* <Route
               path={REGISTER}
               element={
                 <ProtectedRoute user={authStore.isAuthenticated}>
                   <Register />
                 </ProtectedRoute>
               }
-            />
+            /> */}
             <Route path={LOGIN} element={<Login />} />
             <Route
               path="*"

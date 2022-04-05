@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import storeContext from 'providers/storeContext'
 import LoginStore from 'stores/LoginStore'
 import LayoutLogin from 'presentation/LayoutLogin'
-import { HOME } from 'routes/paths'
+// import { HOME } from 'routes/paths'
 import { InputWrapper, Title, PasswordInput, Button } from 'presentation/ui'
 import imgLogin from 'img/login-1.png'
 import LogoFull from 'img/logo-full.png'
@@ -26,8 +26,9 @@ function Login() {
   const handleBlurPassword = () => null
   const handleSubmit = () =>
     loginStore.login().then((success) => {
+      console.log('success', success)
       if (success) {
-        navigate(HOME)
+        navigate('/')
         // navigate(0)
       }
     })
