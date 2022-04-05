@@ -3,18 +3,25 @@
 
 .brand {
   align-items: center;
-  background: rgb(247, 158, 125);
-  background: linear-gradient(0deg, rgba(247, 158, 125, 1) 0%, rgba(240, 131, 14, 1) 100%);
+  background: rgb(0, 153, 255);
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
   grid-area: centerLeft;
-  height: 100%;
+  height: calc(100% - 20px);
   justify-content: center;
+  margin: 10px;
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-down(sm) {
+    width: calc(100% - 20px);
+  }
 }
 
 .brandTitle {
   animation: fadeIn ease 3s;
   padding: 0.75rem;
+  margin-bottom: 130px;
 }
 
 .brandImg {
@@ -33,23 +40,24 @@
 .loginBox {
   animation: fadeIn ease 3s;
   align-items: center;
-  background: rgb(245, 211, 160);
-  background: radial-gradient(
-    circle,
-    rgba(245, 211, 160, 0.19091386554621848) 0%,
-    rgba(154, 154, 154, 0.24) 100%
-  );
+  background: rgb(162, 233, 180);
+  background: radial-gradient(circle, rgba(173, 252, 215, 0.472) 0%, rgba(148, 187, 233, 0) 100%);
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  background-position: center center;
   display: flex;
   grid-area: centerRight;
   justify-content: center;
   height: 100%;
+  @include media-breakpoint-down(sm) {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 }
 
 .loginForm {
   align-items: center;
-  border-radius: 1rem;
-  background-color: rgba(154, 154, 154, 0.14);
-  border: 2px solid #fff;
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -59,10 +67,31 @@
   width: 400px;
   @include media-breakpoint-down(sm) {
     width: 100%;
-    margin: 0 3rem;
+    margin: 0 auto;
   }
 }
 
 .passwordInput {
-  margin-top: 10px;
+  margin-top: 0px;
+}
+
+.bgAnimated {
+  bottom: -5%;
+  height: 100%;
+  left: 15%;
+  position: absolute;
+  z-index: -2;
+  width: 90%;
+  @include media-breakpoint-down(sm) {
+    display: none;
+    position: initial;
+  }
+}
+
+.title {
+  margin: 20px 0;
+}
+
+.text {
+  margin: 0 0 20px 0;
 }

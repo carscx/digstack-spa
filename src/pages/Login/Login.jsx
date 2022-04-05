@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import storeContext from 'providers/storeContext'
 import LoginStore from 'stores/LoginStore'
+import { AnimationBg } from 'presentation/ui/Icons'
 import LayoutLogin from 'presentation/LayoutLogin'
-// import { HOME } from 'routes/paths'
-import { InputWrapper, Title, PasswordInput, Button } from 'presentation/ui'
-import imgLogin from 'img/login-1.png'
+import { InputWrapper, Title, Text, PasswordInput, Button } from 'presentation/ui'
+import imgLogin from 'img/login-2.png'
 import LogoFull from 'img/logo-full.png'
 import s from './login.module.scss'
 
@@ -35,16 +35,18 @@ function Login() {
         <div className={s.brandImg}>
           <img className={s.brandImgLogin} src={imgLogin} alt="LOGIN" />
         </div>
+        <AnimationBg className={s.bgAnimated} />
       </div>
       <div className={s.loginBox}>
         <form className={s.loginForm} onSubmit={handleSubmit}>
-          <Title title={t('signIn')} />
+          <Title title={t('welcome')} className={s.title} />
+          <Text text={t('loginLegend')} className={s.text} />
           <InputWrapper
             inputStore={loginStore.email}
             onChange={handleChangeEmail}
             onFocus={handleFocusEmail}
             onBlur={handleBlurEmail}
-            label={t('email')}
+            placeholder={t('emailPlaceholder')}
             type="email"
           />
           <PasswordInput
@@ -53,7 +55,7 @@ function Login() {
             onChange={handleChangePassword}
             onFocus={handleFocusPassword}
             onBlur={handleBlurPassword}
-            label={t('password')}
+            placeholder={t('passwordPlaceholder')}
           />
           <Button
             disabled={!loginStore.canSubmit}

@@ -74,7 +74,7 @@ function Input({
 Input.propTypes = {
   inputRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   onlyNumeric: PropTypes.bool,
   className: PropTypes.string,
   disabled: PropTypes.bool,
@@ -87,6 +87,7 @@ Input.propTypes = {
 Input.defaultProps = {
   onlyNumeric: false,
   disabled: false,
+  label: null,
   inputRef: null,
   onChange: null,
   onFocus: null,

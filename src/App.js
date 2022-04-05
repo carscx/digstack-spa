@@ -2,7 +2,6 @@
 import axios from 'axios'
 import { observer } from 'mobx-react'
 import { Route, Routes, useLocation } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
 import StoreContext from 'providers/storeContext'
 import RootStore from 'stores/RootStore'
 import AuthStore from 'stores/AuthStore'
@@ -25,57 +24,29 @@ function App() {
     res.headers['accept'] = 'application/json'
     res.headers['content-type'] = 'application/json'
     res.headers['Host'] = '*'
-    // res.config.headers['Accept'] = 'application/json'
-    // res.config.headers['Content-Type'] = 'application/json'
     return res
   })
 
   return (
     <StoreContext.Provider value={rootStore}>
-      <AnimatePresence exitBeforeEnter>
-        <Routes location={location}>
-          <Route element={<Wrapper />}>
-            {/* <Route
-              path={HOME}
-              element={
-                <ProtectedRoute user={authStore.isAuthenticated}>
-                  <Home />
-                </ProtectedRoute>
-              }
-            /> */}
-            <Route element={<ProtectedRoute user={authStore.isAuthenticated} />}>
-              <Route path={HOME} element={<Home />} />
-              <Route path={ABOUT_US} element={<About />} />
-              <Route path={REGISTER} element={<Register />} />
-            </Route>
-            {/* <Route
-              path={ABOUT_US}
-              element={
-                <ProtectedRoute user={authStore.isAuthenticated}>
-                  <About />
-                </ProtectedRoute>
-              }
-            /> */}
-            {/* <Route
-              path={REGISTER}
-              element={
-                <ProtectedRoute user={authStore.isAuthenticated}>
-                  <Register />
-                </ProtectedRoute>
-              }
-            /> */}
-            <Route path={LOGIN} element={<Login />} />
-            <Route
-              path="*"
-              element={
-                <main style={{ padding: '1rem' }}>
-                  <p>No hay resultados</p>
-                </main>
-              }
-            />
+      <Routes location={location}>
+        <Route element={<Wrapper />}>
+          <Route element={<ProtectedRoute user={authStore.isAuthenticated} />}>
+            <Route path={HOME} element={<Home />} />
+            <Route path={ABOUT_US} element={<About />} />
+            <Route path={REGISTER} element={<Register />} />
           </Route>
-        </Routes>
-      </AnimatePresence>
+          <Route path={LOGIN} element={<Login />} />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: '1rem' }}>
+                <p>No hay resultados</p>
+              </main>
+            }
+          />
+        </Route>
+      </Routes>
     </StoreContext.Provider>
   )
 }

@@ -19,13 +19,14 @@ function FormLabel({ label, disabled, isPlaceholder, error }) {
 }
 
 FormLabel.propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   disabled: PropTypes.bool,
   isPlaceholder: PropTypes.bool,
   error: PropTypes.bool,
 }
 
 FormLabel.defaultProps = {
+  label: '',
   disabled: false,
   error: false,
   isPlaceholder: false,

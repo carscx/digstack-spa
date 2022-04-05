@@ -2,9 +2,9 @@
   /* Colors */
   --body-bg: #fcfdfe;
   --primary-color: #003049;
-  --secondary-color: #f77f00;
+  --secondary-color: #4896fc;
   --main-text-color: #003049;
-  --invert-text-color: #eae2b7;
+  --invert-text-color: #8cffd9;
   --error-color: #d62828;
   --error-color-bg: #ffe8e8;
   --success-color: #00aa8c;
@@ -30,5 +30,10 @@
   --button-disabled-background: #f5f8fc;
   --button-disabled-color: #c6d6f7;
 
+  --label-color: var(--primary-color);
+
+  --input-background: #fff;
+  --main-text-color: var(--primary-color);
+  --input-placeholder-color: var(--primary-color);
   --label-color: var(--primary-color);
 }

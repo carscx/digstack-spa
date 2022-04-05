@@ -45,7 +45,11 @@ function PasswordInput({ inputStore, onChange, label, ...props }) {
 PasswordInput.propTypes = {
   inputStore: PropTypes.instanceOf(InputStore).isRequired,
   onChange: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
+}
+
+PasswordInput.defaultProps = {
+  label: '',
 }
 
 export default PasswordInput
