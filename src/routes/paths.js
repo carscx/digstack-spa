@@ -1,4 +1,5 @@
 export const ABOUT_US = '/acerca-de'
 export const HOME = '/'
 export const LOGIN = '/login'
+export const LOGOUT = '/logout'
 export const REGISTER = '/registro'

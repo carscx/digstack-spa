@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable dot-notation */
 import axios from 'axios'
 import { observer } from 'mobx-react'
@@ -10,7 +11,8 @@ import About from 'pages/About'
 import ProtectedRoute from 'routes'
 import Login from 'pages/Login'
 import Register from 'pages/Register'
-import { ABOUT_US, HOME, LOGIN, REGISTER } from 'routes/paths'
+import Logout from 'pages/Logout'
+import { ABOUT_US, HOME, LOGIN, LOGOUT, REGISTER } from 'routes/paths'
 import 'styles/base.module.scss'
 import 'util/i18n'
 
@@ -27,6 +29,20 @@ function App() {
     return res
   })
 
+  axios.interceptors.request.use(
+    (config) => {
+      if (rootStore.authStore.isAuthenticated) {
+        config.headers.Authorization = `Bearer ${rootStore.authStore.authUser.token}`
+      }
+
+      config.headers['accept-language'] = 'es'
+
+      // Do something before request is sent
+      return config
+    },
+    (error) => Promise.reject(error)
+  )
+
   return (
     <StoreContext.Provider value={rootStore}>
       <Routes location={location}>
@@ -35,6 +51,7 @@ function App() {
             <Route path={HOME} element={<Home />} />
             <Route path={ABOUT_US} element={<About />} />
             <Route path={REGISTER} element={<Register />} />
+            <Route path={LOGOUT} element={<Logout />} />
           </Route>
           <Route path={LOGIN} element={<Login />} />
           <Route

@@ -99,7 +99,7 @@ class AuthService {
     this.call = CancelToken.source()
 
     return axios
-      .post(`${API_URL}/logout`, {
+      .post(`${API_URL}/auth/logout`, {
         cancelToken: this.call.token,
       })
       .then(() => {

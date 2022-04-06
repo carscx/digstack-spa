@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ABOUT_US } from 'routes/paths'
+import { ABOUT_US, LOGOUT } from 'routes/paths'
 import s from './home.module.scss'
 
 function Home() {
@@ -13,6 +13,7 @@ function Home() {
         labore officiis reprehenderit quibusdam minus dignissimos in?
       </p>
       <Link to={ABOUT_US}>Ir a Acerca de</Link>
+      <Link to={LOGOUT}>Ir a Acerca de</Link>
     </div>
   )
 }
