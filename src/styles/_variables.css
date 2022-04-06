@@ -4,7 +4,7 @@
   --primary-color: #003049;
   --secondary-color: #4896fc;
   --main-text-color: #003049;
-  --invert-text-color: #8cffd9;
+  --invert-text-color: #009baf;
   --error-color: #d62828;
   --error-color-bg: #ffe8e8;
   --success-color: #00aa8c;
@@ -18,7 +18,7 @@
   --button-default-background: var(--secondary-color);
   --button-default-background-hover: var(--invert-text-color);
   --button-default-color: white;
-  --button-default-color-hover: white;
+  --button-default-color-hover: var(--main-text-color);
   --button-secondary-background: transparent;
   --button-secondary-color: var(--secondary-color);
   --button-secondary-color-hover: #ffffff;

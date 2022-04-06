@@ -24,7 +24,8 @@ function Login() {
   const handleChangePassword = (e) => loginStore.changePassword(e.target.value)
   const handleFocusPassword = () => null
   const handleBlurPassword = () => null
-  const handleSubmit = () => loginStore.login().then((success) => success && navigate('/'))
+  const handleSubmit = () =>
+    loginStore.login().then((success) => success && navigate('/', { replace: true }))
 
   return (
     <LayoutLogin>
