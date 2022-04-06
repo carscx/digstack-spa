@@ -11,6 +11,7 @@ import About from 'pages/About'
 import ProtectedRoute from 'routes'
 import Login from 'pages/Login'
 import Register from 'pages/Register'
+import NotFound from 'pages/NotFound'
 import Logout from 'pages/Logout'
 import { ABOUT_US, HOME, LOGIN, LOGOUT, REGISTER } from 'routes/paths'
 import 'styles/base.module.scss'
@@ -54,14 +55,7 @@ function App() {
             <Route path={LOGOUT} element={<Logout />} />
           </Route>
           <Route path={LOGIN} element={<Login />} />
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: '1rem' }}>
-                <p>No hay resultados</p>
-              </main>
-            }
-          />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </StoreContext.Provider>

@@ -1,0 +1,36 @@
+@import 'styles/animations';
+
+.notFound {
+  align-items: center;
+  background: #131313;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  letter-spacing: -7px;
+  margin: 0;
+  width: 100vw;
+}
+
+.textNotFound {
+  animation: glitch 1s linear infinite;
+  color: #fff;
+  font-family: 'Fira Mono', monospace;
+  font-size: 96px;
+  &:before,
+  &:after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+  &:after {
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+}
+
+.btnHome {
+  margin-top: 20px;
+  width: 240px;
+}
