@@ -3,8 +3,9 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { Greeting, Logo } from 'presentation'
-import { LogoutIcon, MenuIcon, ProjectIcon } from 'presentation/ui/Icons'
-import { HOME, LOGOUT, PROJECTS } from 'routes/paths'
+import { NavLink } from 'presentation/ui'
+import { LogoutIcon, MenuIcon, ProjectIcon, UsersIcon } from 'presentation/ui/Icons'
+import { HOME, LOGOUT, PARTNERS, PROJECTS } from 'routes/paths'
 import useViewport from 'hooks/useViewport'
 import s from './sidebar.module.scss'
 
@@ -41,10 +42,24 @@ function Sidebar() {
         </div>
         <ul className={c(s.sidebarNavUl, showMenu && s.sidebarNavUlMobile)}>
           <li className={s.sidebarNavUlLi}>
-            <Link className={s.navLink} to={PROJECTS}>
+            <NavLink
+              className={c(s.navLink, (navData) => navData.isActive && s.navLinkActive)}
+              styleName={({ isActive }) => (isActive ? 'active' : '')}
+              to={PROJECTS}
+            >
               <ProjectIcon className={s.navIcon} />{' '}
               <span className={s.navText}>{t('menu:projects')}</span>
-            </Link>
+            </NavLink>
+          </li>
+          <li className={s.sidebarNavUlLi}>
+            <NavLink
+              className={c(s.navLink, (navData) => navData.isActive && s.navLinkActive)}
+              styleName={({ isActive }) => (isActive ? 'active' : '')}
+              to={PARTNERS}
+            >
+              <UsersIcon className={s.navIcon} />{' '}
+              <span className={s.navText}>{t('menu:partners')}</span>
+            </NavLink>
           </li>
           <li className={s.sidebarNavUlLi}>
             <Link className={s.navLink} to={LOGOUT}>

@@ -1,5 +1,6 @@
 export const HOME = '/'
 export const LOGIN = '/login'
 export const LOGOUT = '/logout'
+export const PARTNERS = '/partners'
 export const PROJECTS = '/proyectos'
 export const REGISTER = '/registro'
