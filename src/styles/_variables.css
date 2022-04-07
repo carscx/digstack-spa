@@ -36,4 +36,7 @@
   --main-text-color: var(--primary-color);
   --input-placeholder-color: var(--primary-color);
   --label-color: var(--primary-color);
+
+  /* MENU */
+  --color-icon-menu: var(--secondary-color);
 }

@@ -3,12 +3,11 @@ import { observer } from 'mobx-react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import storeContext from 'providers/storeContext'
-import LoginStore from 'stores/LoginStore'
-import { AnimationBg } from 'presentation/ui/Icons'
-import LayoutLogin from 'presentation/LayoutLogin'
+import { LoginStore } from 'stores'
+import { LayoutLogin, Logo } from 'presentation'
 import { InputWrapper, Title, Text, PasswordInput, Button } from 'presentation/ui'
+import { AnimationBg } from 'presentation/ui/Icons'
 import imgLogin from 'img/login-2.png'
-import LogoFull from 'img/logo-full.png'
 import s from './login.module.scss'
 
 function Login() {
@@ -31,7 +30,7 @@ function Login() {
     <LayoutLogin>
       <div className={s.brand}>
         <div className={s.brandTitle}>
-          <img src={LogoFull} alt="LOGO" />
+          <Logo full />
         </div>
         <div className={s.brandImg}>
           <img className={s.brandImgLogin} src={imgLogin} alt="LOGIN" />
@@ -43,6 +42,7 @@ function Login() {
           <Title title={t('welcome')} className={s.title} />
           <Text text={t('loginLegend')} className={s.text} />
           <InputWrapper
+            autoFocus
             inputStore={loginStore.email}
             onChange={handleChangeEmail}
             onFocus={handleFocusEmail}

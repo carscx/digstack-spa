@@ -1,4 +1,9 @@
 {
   "siteName": "Digstack",
-  "goToHome": "Ir al inicio"
+  "goToHome": "Ir al inicio",
+  "greeting": "Hola",
+  "world": "mundo",
+  "director": "director",
+  "pm": "pm",
+  "developer": "developer"
 }

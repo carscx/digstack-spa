@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { HOME } from 'routes/paths'
-import s from './about.module.scss'
+import s from './projects.module.scss'
 
-function About() {
+function Projects() {
   return (
-    <div className={s.about}>
-      <h2>Acerca de</h2>
+    <div className={s.projects}>
+      <h2>Projectos</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, fugiat praesentium,
         velit, saepe ipsum et corporis esse recusandae sint aperiam suscipit autem consectetur
@@ -16,4 +16,4 @@ function About() {
   )
 }
 
-export default About
+export default Projects

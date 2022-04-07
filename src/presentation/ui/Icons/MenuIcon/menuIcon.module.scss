@@ -1,0 +1,42 @@
+$sizeIcon: 25px;
+$sizeLine: 4px;
+
+.hamburger {
+  display: block;
+  height: $sizeIcon;
+  transition: all 0.3s ease-in-out;
+  width: $sizeIcon;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.hamburgerRotate {
+  transform: rotate(-90deg) translateX(-4px);
+}
+
+.line {
+  background: var(--color-icon-menu);
+  border-radius: 4px;
+  display: block;
+  height: $sizeLine;
+  margin: $sizeLine auto;
+  transition: all 0.3s ease-in-out;
+  width: $sizeIcon;
+}
+
+.isActive {
+  &:nth-child(1),
+  &:nth-child(3) {
+    width: calc($sizeIcon - 5px);
+  }
+  &:nth-child(1) {
+    transform: translateX(-8px) translateY(3px) rotate(-45deg) scaleX(0.5);
+  }
+  &:nth-child(2) {
+    transform: scaleX(1.2);
+  }
+  &:nth-child(3) {
+    transform: translateX(-8px) translateY(-3px) rotate(45deg) scaleX(0.5);
+  }
+}
