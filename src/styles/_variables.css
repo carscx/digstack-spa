@@ -39,4 +39,6 @@
 
   /* MENU */
   --color-icon-menu: var(--secondary-color);
+  --size-icon: 25px;
+  --size-line: 4px;
 }

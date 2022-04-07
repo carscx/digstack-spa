@@ -1,11 +1,8 @@
-$sizeIcon: 25px;
-$sizeLine: 4px;
-
 .hamburger {
   display: block;
-  height: $sizeIcon;
+  height: var(--size-icon);
   transition: all 0.3s ease-in-out;
-  width: $sizeIcon;
+  width: var(--size-icon);
   &:hover {
     cursor: pointer;
   }
@@ -19,16 +16,16 @@ $sizeLine: 4px;
   background: var(--color-icon-menu);
   border-radius: 4px;
   display: block;
-  height: $sizeLine;
-  margin: $sizeLine auto;
+  height: var(--size-line);
+  margin: var(--size-line) auto;
   transition: all 0.3s ease-in-out;
-  width: $sizeIcon;
+  width: var(--size-icon);
 }
 
 .isActive {
   &:nth-child(1),
   &:nth-child(3) {
-    width: calc($sizeIcon - 5px);
+    width: calc(var(--size-icon) - 5px);
   }
   &:nth-child(1) {
     transform: translateX(-8px) translateY(3px) rotate(-45deg) scaleX(0.5);
