@@ -9,4 +9,5 @@
 .layout {
   @include box;
   display: flex;
+  min-height: calc(100vh - 65px);
 }
