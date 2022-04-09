@@ -11,7 +11,7 @@
     width: 100%;
   }
   @include media-breakpoint-down(sm) {
-    padding: 1rem;
+    padding: 1rem 0;
     width: 100%;
   }
 }

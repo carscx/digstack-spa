@@ -1,5 +1,11 @@
+@import 'styles/breakpoints';
+
 .title {
   font-size: 3rem;
   line-height: 3rem;
   font-weight: 700;
+  @include media-breakpoint-down(sm) {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
 }

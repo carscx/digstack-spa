@@ -4,15 +4,9 @@
 
 .wrapper {
   @include wrapper;
-  // @include media-breakpoint-down(sm) {
-  //   height: auto;
-  // }
 }
 
 .layout {
   @include box;
   display: flex;
-  // @include media-breakpoint-down(sm) {
-  //   height: auto;
-  // }
 }

@@ -1,5 +1,13 @@
+@import 'styles/breakpoints';
+
 .header {
+  display: flex;
   margin-bottom: 2rem;
+  padding-left: 1rem;
+  @include media-breakpoint-down(sm) {
+    padding-left: 0;
+    justify-content: center;
+  }
 }
 
 .main {
