@@ -28,12 +28,12 @@
     width: calc(var(--size-icon) - 5px);
   }
   &:nth-child(1) {
-    transform: translateX(-8px) translateY(3px) rotate(-45deg) scaleX(0.5);
+    transform: translateX(-10px) translateY(4px) rotate(-45deg) scaleX(0.5);
   }
   &:nth-child(2) {
     transform: scaleX(1.2);
   }
   &:nth-child(3) {
-    transform: translateX(-8px) translateY(-3px) rotate(45deg) scaleX(0.5);
+    transform: translateX(-10px) translateY(-4px) rotate(45deg) scaleX(0.5);
   }
 }

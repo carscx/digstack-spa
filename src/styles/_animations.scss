@@ -87,3 +87,12 @@
     transform: translate(-22px, 5px) skew(21deg);
   }
 }
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}

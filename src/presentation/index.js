@@ -1,7 +1,7 @@
 export { default as Content } from './Content'
 export { default as Greeting } from './Greeting'
 export { default as Layout } from './Layout'
+export { default as LayoutCards } from './LayoutCards'
 export { default as LayoutLogin } from './LayoutLogin'
 export { default as Logo } from './Logo'
-export { default as Project } from './Project'
 export { default as Sidebar } from './Sidebar'

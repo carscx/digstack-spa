@@ -1,7 +1,8 @@
 import { observer } from 'mobx-react'
 import { useEffect, useState } from 'react'
 import { ProjectStore } from 'stores'
-import LayoutCards from 'presentation/LayoutCards/LayoutCards'
+import { LayoutCards } from 'presentation'
+import { Loader } from 'presentation/ui'
 import s from './projects.module.scss'
 
 function Projects() {
@@ -16,7 +17,7 @@ function Projects() {
       {projectStore?.projects?.length > 0 ? (
         <LayoutCards data={projectStore?.projects} />
       ) : (
-        <p>cargando...</p>
+        <Loader />
       )}
     </div>
   )

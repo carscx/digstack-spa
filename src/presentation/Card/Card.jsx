@@ -1,10 +1,12 @@
 import { Button } from 'presentation/ui'
 import PropTypes from 'prop-types'
+import { useTranslation } from 'react-i18next'
 import { IMAGES_URL } from 'services/config'
 
 import s from './card.module.scss'
 
 function Card({ data }) {
+  const { t } = useTranslation('common')
   return (
     <li className={s.cardItem}>
       <div className={s.card}>
@@ -28,7 +30,7 @@ function Card({ data }) {
         <div className={s.cardContent}>
           <h2 className={s.cardTitle}>{data.title}</h2>
           <p className={s.cardText}>{data.description}</p>
-          <Button className={s.btnCard} label="Más info" />
+          <Button className={s.btnCard} label={t('viewMore')} />
         </div>
       </div>
     </li>
