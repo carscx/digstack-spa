@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 import { IMAGES_URL } from 'services/config'
 
-import s from './card.module.scss'
+import s from './cardProject.module.scss'
 
-function Card({ data }) {
+function CardProject({ data }) {
   const { t } = useTranslation('common')
   return (
     <li className={s.cardItem}>
@@ -37,8 +37,8 @@ function Card({ data }) {
   )
 }
 
-Card.propTypes = {
+CardProject.propTypes = {
   data: PropTypes.oneOfType([PropTypes.object]).isRequired,
 }
 
-export default Card
+export default CardProject

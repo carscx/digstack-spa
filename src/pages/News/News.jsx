@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next'
 import { UserStore } from 'stores'
 import { LayoutCards } from 'presentation'
 import { Loader } from 'presentation/ui'
-import s from './partners.module.scss'
+import s from './news.module.scss'
 
-function Partners() {
+function News() {
   const [userStore] = useState(() => new UserStore())
   const { t } = useTranslation('menu')
 
@@ -15,9 +15,9 @@ function Partners() {
   }, [])
 
   return (
-    <div className={s.partners}>
+    <div className={s.news}>
       {userStore?.users?.length > 0 ? (
-        <LayoutCards type="users" data={userStore?.users} title={t('partners')} />
+        <LayoutCards type="users" data={userStore?.users} title={t('news')} />
       ) : (
         <Loader />
       )}
@@ -25,4 +25,4 @@ function Partners() {
   )
 }
 
-export default observer(Partners)
+export default observer(News)

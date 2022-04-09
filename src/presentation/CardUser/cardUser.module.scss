@@ -1,0 +1,77 @@
+@import 'styles/breakpoints';
+
+.cardItem {
+  display: flex;
+  padding: 1rem;
+  width: 33.33%;
+  @include media-breakpoint-down(lg) {
+    width: 50%;
+  }
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 1rem 0;
+    width: 100%;
+  }
+}
+
+.card {
+  position: relative;
+  min-width: 250px;
+  background-color: #fff;
+  box-shadow: 2px 3px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.topBar {
+  width: 50%;
+  height: 4px;
+  background: #507bfc;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0px 0px 10px 10px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.contentImage {
+  border-radius: 100px;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.8);
+  height: 90px;
+  object-fit: cover;
+  object-position: top;
+  overflow: hidden;
+  width: 90px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentName {
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.contentDescription {
+  font-weight: 400;
+  margin-top: 10px;
+}

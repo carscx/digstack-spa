@@ -3,8 +3,8 @@ import { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, NavLink } from 'react-router-dom'
 import { Greeting, Logo } from 'presentation'
-import { LogoutIcon, MenuIcon, ProjectIcon, UsersIcon } from 'presentation/ui/Icons'
-import { HOME, LOGOUT, PARTNERS, PROJECTS } from 'routes/paths'
+import { LogoutIcon, MenuIcon, NewsIcon, ProjectIcon, UsersIcon } from 'presentation/ui/Icons'
+import { HOME, LOGOUT, NEWS, PARTNERS, PROJECTS } from 'routes/paths'
 import storeContext from 'providers/storeContext'
 import useViewport from 'hooks/useViewport'
 import s from './sidebar.module.scss'
@@ -34,7 +34,7 @@ function Sidebar() {
           </Link>
         </div>
         <div className={s.sidebarActions}>
-          <Greeting username={authStore?.authUser?.username} isClosed={isClosed} />
+          <Greeting username={authStore?.authUser?.first_name} isClosed={isClosed} />
           <MenuIcon
             open={isClosed}
             showMenu={isMobileSize() ? !showMenu : showMenu}
@@ -58,6 +58,14 @@ function Sidebar() {
             >
               <UsersIcon className={s.navIcon} />{' '}
               <span className={s.navText}>{t('menu:partners')}</span>
+            </NavLink>
+          </li>
+          <li className={s.sidebarNavUlLi}>
+            <NavLink
+              className={c(s.navLink, (navData) => navData.isActive && s.navLinkActive)}
+              to={NEWS}
+            >
+              <NewsIcon className={s.navIcon} /> <span className={s.navText}>{t('menu:news')}</span>
             </NavLink>
           </li>
           <li className={s.sidebarNavUlLi}>
