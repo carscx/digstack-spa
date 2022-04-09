@@ -78,6 +78,7 @@ const AxiosInterceptors = ({ children, rootStore }) => {
         }
 
         config.headers['accept-language'] = 'es'
+        config.headers.Accept = 'application/json'
 
         // Do something before request is sent
         return config

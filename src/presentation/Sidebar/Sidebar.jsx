@@ -1,17 +1,18 @@
 import c from 'classnames'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Greeting, Logo } from 'presentation'
-import { NavLink } from 'presentation/ui'
 import { LogoutIcon, MenuIcon, ProjectIcon, UsersIcon } from 'presentation/ui/Icons'
 import { HOME, LOGOUT, PARTNERS, PROJECTS } from 'routes/paths'
+import storeContext from 'providers/storeContext'
 import useViewport from 'hooks/useViewport'
 import s from './sidebar.module.scss'
 
 function Sidebar() {
   const [isClosed, setIsClosed] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
+  const { authStore } = useContext(storeContext)
   const { width } = useViewport()
   const { t } = useTranslation(['auth', 'menu'])
   const isMobileSize = () => width < 768
@@ -33,7 +34,7 @@ function Sidebar() {
           </Link>
         </div>
         <div className={s.sidebarActions}>
-          <Greeting isClosed={isClosed} />
+          <Greeting username={authStore?.authUser?.username} isClosed={isClosed} />
           <MenuIcon
             open={isClosed}
             showMenu={isMobileSize() ? !showMenu : showMenu}
@@ -44,7 +45,6 @@ function Sidebar() {
           <li className={s.sidebarNavUlLi}>
             <NavLink
               className={c(s.navLink, (navData) => navData.isActive && s.navLinkActive)}
-              styleName={({ isActive }) => (isActive ? 'active' : '')}
               to={PROJECTS}
             >
               <ProjectIcon className={s.navIcon} />{' '}
@@ -54,7 +54,6 @@ function Sidebar() {
           <li className={s.sidebarNavUlLi}>
             <NavLink
               className={c(s.navLink, (navData) => navData.isActive && s.navLinkActive)}
-              styleName={({ isActive }) => (isActive ? 'active' : '')}
               to={PARTNERS}
             >
               <UsersIcon className={s.navIcon} />{' '}

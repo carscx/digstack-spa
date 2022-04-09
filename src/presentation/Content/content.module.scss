@@ -1,13 +1,10 @@
+@import 'styles/breakpoints';
 @import 'styles/mixins';
 
 .content {
-  // align-items: center;
-  // display: flex;
-  // justify-content: center;
-  // border: 1px solid green;
   @include box;
+  display: flex;
   flex: 1;
   margin: 15px;
   padding: 30px;
-  height: calc(100% - 30px);
 }

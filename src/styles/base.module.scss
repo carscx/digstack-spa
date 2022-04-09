@@ -15,4 +15,8 @@ html {
   color: var(--primary-color);
   font-family: var(--main-font);
   height: 100%;
+  @include media-breakpoint-down(sm) {
+    min-height: fit-content;
+    height: auto;
+  }
 }

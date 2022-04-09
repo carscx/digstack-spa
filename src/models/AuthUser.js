@@ -1,13 +1,14 @@
+/* eslint-disable camelcase */
 import { makeAutoObservable } from 'mobx'
 
 class AuthUser {
-  constructor(userId, roleId, username, email, lastActivatedAt, status, token) {
+  constructor(userId, role_id, username, email, last_activated_at, status, token) {
     this.token = token
     this.userId = userId
-    this.roleId = roleId
+    this.role_id = role_id
     this.username = username
     this.email = email
-    this.lastActivatedAt = lastActivatedAt
+    this.last_activated_at = last_activated_at
     this.status = status
 
     makeAutoObservable(this)
@@ -23,10 +24,6 @@ class AuthUser {
       user.status,
       token
     )
-  }
-
-  static fromJsonRegister({ accessToken: token }) {
-    return new AuthUser(null, null, null, null, token)
   }
 
   static fromCookie(user) {

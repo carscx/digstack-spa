@@ -3,9 +3,8 @@ import StoreContext from 'providers/storeContext'
 import ViewportProvider from 'providers/viewportProvider'
 import { RootStore } from 'stores'
 import { AppRouter } from 'routes'
-
 import { AxiosInterceptors } from 'util'
-
+import 'styles/global.css'
 import 'styles/base.module.scss'
 import 'util/i18n'
 
