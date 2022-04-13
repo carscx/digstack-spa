@@ -8,11 +8,11 @@ const AxiosInterceptors = ({ children, rootStore }) => {
   const { authStore } = useContext(storeContext)
 
   useMemo(() => {
-    // Handles all 403 requests
+    // Handles all 422 requests
     interceptors.response.use(
       (response) => response,
       (error) => {
-        if (error.response.status !== 403 && error.response.status !== 422) {
+        if (error.response.status !== 422) {
           error.response.unknown = true
         }
 
@@ -55,7 +55,7 @@ const AxiosInterceptors = ({ children, rootStore }) => {
     interceptors.response.use(
       (response) => response,
       (error) => {
-        if (error.response !== undefined && error.response.status === 401) {
+        if (error.response !== undefined && error.response.status === 403) {
           authStore.logout()
           document.cookie = 'authUser=; expires=Thu, 01 Jan 1970 00:00:00 UTC'
           error.response.unknown = true
