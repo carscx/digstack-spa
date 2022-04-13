@@ -1,3 +1,4 @@
+export { default as CardNews } from './CardNews'
 export { default as CardProject } from './CardProject'
 export { default as CardUser } from './CardUser'
 export { default as Content } from './Content'

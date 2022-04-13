@@ -12,11 +12,20 @@
 
 html {
   background: #fefefe;
-  color: var(--primary-color);
+  color: var(--main-tex-color);
   font-family: var(--main-font);
   height: 100%;
   @include media-breakpoint-down(sm) {
     min-height: fit-content;
     height: auto;
+  }
+}
+
+a {
+  color: var(--main-tex-color);
+  font-weight: 600;
+  text-decoration: underline;
+  &:visited {
+    color: var(--main-tex-color);
   }
 }

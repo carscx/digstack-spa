@@ -1,5 +1,9 @@
 {
   "projects": "Proyectos",
   "partners": "Compañeros",
-  "news": "Novedades"
+  "news": "Novedades",
+  "lastNews": "Últimas Novedades",
+  "lastProjects": "Últimos Projectos",
+  "lastUsers": "Últimos Compañeros",
+  "poweredBy": "Powered by"
 }

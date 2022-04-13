@@ -4,6 +4,8 @@
   display: flex;
   margin-bottom: 2rem;
   padding-left: 1rem;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 2rem;
   @include media-breakpoint-down(sm) {
     padding-left: 0;
     justify-content: center;
@@ -12,6 +14,7 @@
 
 .main {
   display: flex;
+  padding-bottom: 2rem;
   width: 100%;
 }
 

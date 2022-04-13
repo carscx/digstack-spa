@@ -33,6 +33,9 @@
   .navIcon {
     margin: 0 auto;
   }
+  .poweredBy {
+    display: none;
+  }
 }
 
 .sidebarActions {
@@ -100,6 +103,14 @@
   transition: all 0.4s ease;
 }
 
-.navLinkActive {
-  border: 2px solid red;
+.footerSidebar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.poweredBy {
+  margin-right: 5px;
 }

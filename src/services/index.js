@@ -1,3 +1,5 @@
 export { default as AuthService } from './AuthService'
+export { default as DashboardService } from './DashboardService'
+export { default as PostService } from './PostService'
 export { default as ProjectService } from './ProjectService'
 export { default as UserService } from './UserService'
